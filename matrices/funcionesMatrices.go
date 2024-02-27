@@ -2,7 +2,13 @@ package matrices
 
 import "fmt"
 
-func sumarFilas(matriz [][]int) int {
+func MostrarMatriz(matriz [][]int) {
+	for _, fila := range matriz {
+		fmt.Println(fila)
+	}
+}
+
+func SumarFilas(matriz [][]int) int {
 	sumaTotalFilas := 0
 	for i := 0; i < len(matriz); i++ {
 		sumaFilas := 0
@@ -10,12 +16,12 @@ func sumarFilas(matriz [][]int) int {
 			sumaFilas += matriz[i][j]
 		}
 		sumaTotalFilas += sumaFilas
-		fmt.Printf("la suma en la fila %d es : %d\n", (i + 1), sumaFilas)
+		fmt.Printf("La suma en la fila %d es: %d\n", (i + 1), sumaFilas)
 	}
 	return sumaTotalFilas
 }
 
-func sumarColumnas(matriz [][]int) int {
+func SumarColumnas(matriz [][]int) int {
 	sumatTotalesColumnas := 0
 	for i := 0; i < len(matriz); i++ {
 		sumacolumnaz := 0
@@ -23,7 +29,7 @@ func sumarColumnas(matriz [][]int) int {
 			sumacolumnaz += matriz[j][i]
 		}
 		sumatTotalesColumnas += sumacolumnaz
-		fmt.Printf("la suma en la columna %d es : %d\n", (i + 1), sumacolumnaz)
+		fmt.Printf("La suma en la columna %d es: %d\n", (i + 1), sumacolumnaz)
 	}
 	return sumatTotalesColumnas
 }

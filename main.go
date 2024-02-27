@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/Xavier2920093/TareasGO/matrices"
+)
 
 func main() {
 	matriz := [][]int{
@@ -9,15 +13,14 @@ func main() {
 		{7, 8, 9},
 	}
 
-	//mostrar matriz
-	fmt.Print(matriz)
-	sumaTotalFilas := sumarFilas(matriz)
-	fmt.Println("Suma total de las filas es :", sumaTotalFilas)
+	fmt.Println("Matriz:")
+	matrices.MostrarMatriz(matriz)
 
-	fmt.Println()
+	sumaTotalFilas := matrices.SumarFilas(matriz)
+	fmt.Println("Suma total de las filas es:", sumaTotalFilas)
 
-	sumatTotalesColumnas := sumarColumnas(matriz)
-	fmt.Println("Suma total de las columnas es :", sumatTotalesColumnas)
+	sumaTotalColumnas := matrices.SumarColumnas(matriz)
+	fmt.Println("Suma total de las columnas es:", sumaTotalColumnas)
 
-	fmt.Printf("El resultado es %d x %d : %d\n", sumaTotalFilas, sumatTotalesColumnas, sumaTotalFilas*sumatTotalesColumnas)
+	fmt.Printf("El resultado es %d x %d : %d\n", sumaTotalFilas, sumaTotalColumnas, sumaTotalFilas*sumaTotalColumnas)
 }
